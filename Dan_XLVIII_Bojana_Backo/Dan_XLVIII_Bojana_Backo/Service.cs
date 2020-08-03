@@ -120,7 +120,7 @@ namespace Dan_XLVIII_Bojana_Backo
                 using (PizzeriaEntities context = new PizzeriaEntities())
                 {
                     List<tblOrder> order = new List<tblOrder>();
-                    order = (from e in context.tblOrders where e.UserID == userGuest.UserID select e).ToList();
+                    order = (from e in context.tblOrders where e.UserID == userId select e).ToList();
                     return order;
                 }
             }
