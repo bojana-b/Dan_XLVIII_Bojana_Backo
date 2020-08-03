@@ -1,0 +1,38 @@
+﻿<Window x:Class="Dan_XLVIII_Bojana_Backo.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dan_XLVIII_Bojana_Backo.View"
+        mc:Ignorable="d"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="Pizzeria" Height="430" Width="500" FontSize="14">
+    <Window.Resources>
+        <x:Array Type="sys:String" x:Key="Pizza">
+            <sys:String>Capricciosa</sys:String>
+            <sys:String>Margherita</sys:String>
+            <sys:String>Quattro Stagioni</sys:String>
+            <sys:String>Quattro Formaggi</sys:String>
+            <sys:String>Vegeteriana</sys:String>
+        </x:Array>
+    </Window.Resources>
+    <Border Background="LightGoldenrodYellow" CornerRadius="20" Margin="20">
+        <StackPanel Margin="20">
+            <Label Content="MENU" Foreground="DarkOliveGreen" FontSize="25" HorizontalAlignment="Center"/>
+            <Separator></Separator>
+            <Label Content="Pizza:" Foreground="DarkOliveGreen"/>
+            <ComboBox Name="cmbPizza" Background="LightYellow" Foreground="DarkOliveGreen" FontSize="18" 
+                      ItemsSource="{StaticResource ResourceKey=Pizza}"
+                      SelectedItem="{Binding Order.Name, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Name="btnOK" Content="OK" Margin="120 10" Background="LightYellow" Foreground="DarkOliveGreen"
+                    Command="{Binding Ok, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="Number" Foreground="DarkOliveGreen"/>
+            <TextBox Name="txtNumber" Background="LightYellow" Foreground="DarkOliveGreen" FontSize="18"/>
+            <Label Content="Price" Foreground="DarkOliveGreen"/>
+            <TextBlock Name="txtPrice" Background="LightYellow" Foreground="White" FontSize="18"
+                     Text="{Binding Order.Price, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <Button Name="btnOrder" Content="Order" Margin="60 10" Background="LightYellow" Foreground="DarkOliveGreen"
+                    Command="{Binding AddOrder, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+    </Border>
+</Window>
