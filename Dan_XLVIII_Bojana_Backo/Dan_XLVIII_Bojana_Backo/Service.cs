@@ -7,6 +7,7 @@ namespace Dan_XLVIII_Bojana_Backo
     class Service
     {
         public static tblUser userGuest = new tblUser();
+        public static int userId = 1;
         // Method that add user to database by his jmbg
         public tblUser AddUser(string user)
         {
@@ -18,7 +19,7 @@ namespace Dan_XLVIII_Bojana_Backo
                     newUser.jmbg = user;
                     context.tblUsers.Add(newUser);
                     context.SaveChanges();
-                    userGuest.UserID = newUser.UserID;
+                    userId = newUser.UserID;
                     return newUser;
                 }
             }
@@ -83,7 +84,7 @@ namespace Dan_XLVIII_Bojana_Backo
                     newOrder.OrderDate = DateTime.Now;
                     newOrder.Price = order.Price;
                     newOrder.OrderStatus = "on hold";
-                    newOrder.UserID = userGuest.UserID;
+                    newOrder.UserID = userId;
                     context.tblOrders.Add(newOrder);
                     context.SaveChanges();
                 }

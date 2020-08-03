@@ -30,6 +30,21 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
                 OnPropertyChanged("Order");
             }
         }
+
+        private int currentPrice = 0;
+        public int CurrentPrice
+        {
+            get
+            {
+                return currentPrice;
+            }
+            set
+            {
+                currentPrice = value;
+                OnPropertyChanged("CurrentPrice");
+
+            }
+        }
         #endregion
 
         #region Commands
@@ -85,22 +100,27 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
         {
             if (order.Name.Equals("Capricciosa"))
             {
-                order.Price = 1200;
+                CurrentPrice = 1200;
+                Order.Price = 1200;
             }
             else if (order.Name.Equals("Margherita"))
             {
+                CurrentPrice = 1000;
                 order.Price = 1000;
             }
             else if (order.Name.Equals("Quattro Stagioni"))
             {
+                CurrentPrice = 1600;
                 order.Price = 1600;
             }
             else if (order.Name.Equals("Quattro Formaggi"))
             {
+                CurrentPrice = 1500;
                 order.Price = 1500;
             }
             else if (order.Name.Equals("Vegeteriana"))
             {
+                CurrentPrice = 1100;
                 order.Price = 1100;
             }
         }

@@ -29,8 +29,8 @@
             <Label Content="Number" Foreground="DarkOliveGreen"/>
             <TextBox Name="txtNumber" Background="LightYellow" Foreground="DarkOliveGreen" FontSize="18"/>
             <Label Content="Price" Foreground="DarkOliveGreen"/>
-            <TextBlock Name="txtPrice" Background="LightYellow" Foreground="White" FontSize="18"
-                     Text="{Binding Order.Price, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <TextBox Visibility="Visible" Name="txtPrice" Background="LightYellow" Foreground="Black" FontSize="18"
+                     Text="{Binding CurrentPrice}"/>
             <Button Name="btnOrder" Content="Order" Margin="60 10" Background="LightYellow" Foreground="DarkOliveGreen"
                     Command="{Binding AddOrder, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
