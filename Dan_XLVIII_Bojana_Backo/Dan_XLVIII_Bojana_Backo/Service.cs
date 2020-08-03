@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dan_XLVIII_Bojana_Backo
 {
@@ -20,6 +18,7 @@ namespace Dan_XLVIII_Bojana_Backo
                     newUser.jmbg = user;
                     context.tblUsers.Add(newUser);
                     context.SaveChanges();
+                    userGuest.UserID = newUser.UserID;
                     return newUser;
                 }
             }
@@ -29,7 +28,7 @@ namespace Dan_XLVIII_Bojana_Backo
                 return null;
             }
         }
-
+        // Methot to check if User has already make an order in the past
         public bool IsUser(string jmbg)
         {
             try
