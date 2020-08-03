@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dan_XLVIII_Bojana_Backo.View"
         mc:Ignorable="d"
-        Title="Update Status" Height="200" Width="200">
+        Title="Update Status" Background="AntiqueWhite" Height="200" Width="200">
     <Grid>
         <StackPanel Orientation="Horizontal" Margin="10">
             <RadioButton Width="100" Content="approved" Command="{Binding Path=ChooseStatus}"

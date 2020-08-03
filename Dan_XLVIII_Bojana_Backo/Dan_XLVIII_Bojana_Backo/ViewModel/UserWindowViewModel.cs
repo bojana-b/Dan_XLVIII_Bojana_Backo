@@ -40,7 +40,6 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
                 OnPropertyChanged("OrderList");
             }
         }
-
         #endregion
     }
 }

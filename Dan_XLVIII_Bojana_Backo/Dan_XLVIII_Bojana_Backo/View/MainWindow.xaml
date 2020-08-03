@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Dan_XLVIII_Bojana_Backo.View"
         mc:Ignorable="d"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        Title="Pizzeria" Height="430" Width="500" FontSize="14">
+        Title="Pizzeria" Background="AntiqueWhite" Height="430" Width="500" FontSize="14">
     <Window.Resources>
         <x:Array Type="sys:String" x:Key="Pizza">
             <sys:String>Capricciosa</sys:String>

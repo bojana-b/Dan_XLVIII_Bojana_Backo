@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dan_XLVIII_Bojana_Backo.View"
         mc:Ignorable="d"
-        Title="Manager" Height="380" Width="700" FontSize="14">
+        Title="Manager" Background="AntiqueWhite" Height="380" Width="700" FontSize="14">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -27,6 +27,10 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
+        <Grid Grid.Column="1" Grid.Row="3" Height="auto" Width="auto">
+            <Button x:Name="closeBtn" Content="Close" Height="30" Width="150" VerticalAlignment="Top" 
+                Command="{Binding Close, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
         <Grid Grid.Column="1" Grid.Row="1" Height="auto" Width="auto">
             <DataGrid x:Name="DataGridResults" ItemsSource="{Binding OrderList, UpdateSourceTrigger=PropertyChanged}"
                       SelectedItem="{Binding Order, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" HeadersVisibility="Column"

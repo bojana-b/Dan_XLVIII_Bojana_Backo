@@ -50,8 +50,10 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
 
         private void SaveExecute()
         {
+            LoginScreen login = new LoginScreen();
             service.AddOrder(Order);
             main.Close();
+            login.ShowDialog();
         }
 
         private bool CanSaveExecute()
@@ -84,6 +86,22 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
             if (order.Name.Equals("Capricciosa"))
             {
                 order.Price = 1200;
+            }
+            else if (order.Name.Equals("Margherita"))
+            {
+                order.Price = 1000;
+            }
+            else if (order.Name.Equals("Quattro Stagioni"))
+            {
+                order.Price = 1600;
+            }
+            else if (order.Name.Equals("Quattro Formaggi"))
+            {
+                order.Price = 1500;
+            }
+            else if (order.Name.Equals("Vegeteriana"))
+            {
+                order.Price = 1100;
             }
         }
 

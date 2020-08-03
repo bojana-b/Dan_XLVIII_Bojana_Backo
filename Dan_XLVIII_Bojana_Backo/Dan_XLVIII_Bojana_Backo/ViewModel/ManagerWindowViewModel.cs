@@ -96,6 +96,10 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
             {
                 return false;
             }
+            else if(order.OrderStatus.Equals("on hold"))
+            {
+                return false;
+            }
             else
             {
                 return true;
@@ -144,6 +148,38 @@ namespace Dan_XLVIII_Bojana_Backo.ViewModel
             {
                 return true;
             }
+        }
+
+        private ICommand close;
+        public ICommand Close
+        {
+            get
+            {
+                if (close == null)
+                {
+                    close = new RelayCommand(param => CloseExecute(), param => CanCloseExecute());
+                }
+                return close;
+            }
+        }
+
+        private void CloseExecute()
+        {
+            try
+            {
+                LoginScreen login = new LoginScreen();
+                managerWindow.Close();
+                login.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private bool CanCloseExecute()
+        {
+            return true;
         }
         #endregion 
     }
